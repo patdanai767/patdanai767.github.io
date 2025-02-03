@@ -1,0 +1,152 @@
+*{
+  margin:0;
+  padding:0;
+  font-family: 'Poppins', "Kanit", serif;
+}
+
+.background{
+  background-color: #FFFBE3;
+}
+
+h1 {
+  font-family: "Kanit", serif;;
+}
+
+h2 {
+  font-family: "Baloo Bhai 2", serif;
+  font-weight: 600;
+  background-color: #FF7AC1;
+  color: #FFFBE3;
+  border-radius: 12px;
+  width: fit-content;
+  padding: 8px 32px;
+}
+
+p {
+  font-family: 'Poppins', "Kanit", serif;
+}
+
+.mt-800{
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap:8rem;
+}
+
+a:visited {
+  text-decoration: none;
+  background-color: transparent;
+  color:black
+}
+
+.text-nav {
+  color: #000000;
+}
+
+.navbar {
+  background-color: #BEE6FF;
+}
+.navbar-nav{
+  color:#000000
+}
+
+.navbar-brand {
+  color: #000000;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.box .card {
+  height: 100%;
+  border: none;
+  background: none;
+}
+
+.card-text {
+  text-align: center;
+  font-family: "Kanit", serif;
+  font-size: 18px;
+  color: black;
+  font-weight: 600;
+}
+
+.card img {
+  border: 2px solid #FF7AC1;
+  border-radius: 12px 12px 0 0;
+  border-bottom: none;
+}
+
+.card-body {
+  background-color: #FFBDE0;
+  border: 2px solid #FF7AC1;
+  border-radius: 0 0 12px 12px;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.gap-y {
+  row-gap: 32px;
+}
+.gap-x{
+  column-gap: 32px;
+}
+
+.img1{
+  border-radius: 30px;
+  width: 400px;
+  height: 400px;
+  /* object-fit: cover; */
+}
+
+.img-container {
+  width: 400px;
+  aspect-ratio: 1/1;
+}
+
+.text-item{
+  margin-top:2rem;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(100%) sepia(100%) saturate(500%) hue-rotate(200deg);
+}
+
+.navbar-toggler-icon {
+  filter: invert(1); 
+}
+.social-icon a{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  color:#000000;
+  background-color: white;
+  border: 0.2rem solid #FF7AC1;
+  font-size: 2rem;
+  border-radius: 50%;
+  margin:3rem 1.5rem 3rem;
+  transition:0.3s ease;
+}
+.social-icon a:hover{
+  color:pink;
+  transform:scale(1.3)translateY(-5px);
+}
+
+.justify-items-center{
+  justify-items: center;
+}
