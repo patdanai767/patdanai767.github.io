@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction Sec24-Group2</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <style type="text/tailwindcss">
+      @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+      @layer components {
+        .bg-pixel_world {
+          background-image: url("https://images.unsplash.com/photo-1633421878925-ac220d8f6e4f?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
+        }
+
+        .bg-project_world {
+          background-image: url("https://images.unsplash.com/photo-1496150458551-140441714f2f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
+        }
+      }
+
+      @theme {
+        --color-black: #000;
+        --color-gray: #cdcdcd;
+        --color-brown: #856360;
+        --color-red: #862a00;
+        --color-orange: #c76735;
+        --color-yellow: #e29f51;
+        --color-green: #c5e369;
+        --color-darkgreen: #2e5b3f;
+        --color-mint: #c8ede0;
+      }
+
+      .text-outline-3 {
+        text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black,
+          3px 3px 0 black;
+      }
+
+      .text-outline-win {
+        text-shadow: -3px -3px 0 var(--color-green),
+          3px -3px 0 var(--color-green), -3px 3px 0 var(--color-green),
+          3px 3px 0 var(--color-green);
+      }
+
+      .text-outline-darkgreen {
+        text-shadow: -3px -3px 0 var(--color-darkgreen),
+          3px -3px 0 var(--color-darkgreen), -3px 3px 0 var(--color-darkgreen),
+          3px 3px 0 var(--color-darkgreen);
+      }
+
+      .text-outline-lose {
+        text-shadow: -3px -3px 0 var(--color-red), 3px -3px 0 var(--color-red),
+          -3px 3px 0 var(--color-red), 3px 3px 0 var(--color-red);
+      }
+
+      .font-game {
+        font-family: "Press Start 2P", serif;
+      }
+
+      .font-game-thai {
+        font-family: "Noto Sans Thai", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-[#FFFBE3]">
+    
+    <!-- Navbar -->
+    <nav
+      class="bg-black md:bg-black text-gray-300 py-4 fixed w-full top-0 justify-items-center"
+    >
+      <div class="container">
+        <div class="flex justify-between items-center w-full">
+          <a
+            href="../home.html"
+            class="hover:text-gray-400 transition text-[24px] font-game"
+            >CEFR Monster</a
+          >
+          <ul class="ml-8 space-x-16 hidden md:block">
+            <li class="inline-block">
+              <a href="#home" class="hover:text-gray-400">
+                <i class="fa-solid fa-house mr-1"></i>Home
+              </a>
+            </li>
+            <li class="inline-block">
+              <a href="#about" class="hover:text-gray-400 scroll-smooth">
+                <i class="fa-regular fa-address-card mr-1"></i>About us
+              </a>
+            </li>
+            <li class="inline-block">
+              <a href="#project" class="hover:text-gray-400">
+                <i class="fa-solid fa-certificate mr-1"></i>Project
+              </a>
+            </li>
+          </ul>
+
+          <button
+            type="button"
+            class="md:hidden inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+            id="open-burgur"
+          >
+            <svg
+              class="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="hidden w-full" id="navbar-hamburger">
+        <ul class="flex flex-col font-medium mt-4 bg-black">
+          <li>
+            <a
+              href="#home"
+              class="block py-2 px-3 hover:bg-gray-100 hover:text-black transition"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#about"
+              class="block py-2 px-3 hover:bg-gray-100 hover:text-black transition"
+              >About us</a
+            >
+          </li>
+          <li>
+            <a
+              href="#project"
+              class="block py-2 px-3 hover:bg-gray-100 hover:text-black transition"
+              >Project</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Home -->
+    <div
+      class="min-h-screen bg-pixel_world bg-cover bg-center bg-no-repeater flex text-white"
+      id="home"
+    >
+      <div
+        class="text-center md:text-left content-center justify-items-center w-full"
+      >
+        <div class="container space-y-2">
+          <div
+            class="text-[32px] md:text-[60px] w-full grid space-y-[-10px] font-game text-outline-3"
+          >
+            <p>WELCOME</p>
+            <p>TO GROUP-2</p>
+          </div>
+          <div class="mt-2 text-gray-300/70 w-full">
+            Please, be kind because we're innocent for this cruel world.
+          </div>
+          <div class="flex justify-center md:justify-start">
+            <a
+              href="#about"
+              class="border cursor-pointer bg-linear-to-l from-blue-500 to-black-500 flex justify-center mt-4 rounded-xl py-2 px-6 hover:from-gray-500 hover:to-blue-800 transition duration-400 ease-in-out"
+            >
+              About us
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About -->
+    <div class="flex justify-center" id="about">
+      <div class="container mb-32">
+        <div
+          class="font-game text-white text-outline-3 text-[32px] text-center mt-16"
+        >
+          Members
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          <!-- Get -->
+          <div class="bg-orange/40 rounded-xl p-4 bg-[#FFFBE3]">
+            <div class="flex space-x-6">
+              <img
+                src="./photo/get.jpg"
+                class="object-cover w-[240px] h-full aspect-square rounded-lg"
+                alt="Get"
+              />
+              <div>
+                <h1 class="text-[24px]">นายพีรณัฐ จงรักดี</h1>
+                <div>
+                  <p>
+                    สวัสดีครับผมชื่อนายพีรณัฐ จงรักดี อายุ20ขวบ
+                    ปัจจุบันอาศัยอยู่ที่บ้านกับครอบครัว งานอดิเรกชอบเล่นเกม
+                    ฟังเพลง ดูการ์ตูน ดูไปเรื่อย
+                  </p>
+                  <p>
+                    อาหารที่ชอบคือผัดกะเพราหมูกรอบไข่ดาว ก๋วยเตี๋ยวเรือ
+                    แล้วก็ชอบชาบูปิ้งย่างด้วย ยินดีที่ได้รู้จักครับ
+                  </p>
+                </div>
+                <div class="social-icon">
+                  <a
+                    href="https://www.facebook.com/peeranat.chongrakdee.5"
+                    target="_blank"
+                  >
+                    <i class="fa-brands fa-facebook"></i>
+                  </a>
+                  <a href="https://www.instagram.com/p_ranut/" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa-brands fa-line"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Phu -->
+          <div class="bg-darkgreen/40 rounded-xl p-4 bg-[#FFFBE3]">
+            <div class="flex space-x-6">
+              <img
+                src="./photo/phu.png"
+                class="object-cover w-[240px] h-full rounded-lg"
+                alt="Phu"
+              />
+              <div>
+                <h1 class="text-[24px]">นายภวดล เนื้อสะอาด</h1>
+                <div>
+                  <p>
+                    Hello world ! my name is Phawadon Nuresaard. You can call me
+                    <span style="font-weight: bold; color: #ff7ac1"
+                      >' Phu '</span
+                    >
+                    . I'm a sophomore at KMITL. My hobbies are eat, sleep and
+                    listen to music.
+                  </p>
+                  <p>
+                    ได้โปรดมาเป็นเพื่อนกับฉัน ติดตาม contact
+                    ของฉันได้ที่ด้านล่าง
+                  </p>
+                </div>
+                <div class="social-icon">
+                  <a
+                    href="https://www.facebook.com/phupa.nuresaard"
+                    target="_blank"
+                  >
+                    <i class="fa-brands fa-facebook"></i>
+                  </a>
+                  <a href="https://www.instagram.com/phupn_/" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa-brands fa-line"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Bow -->
+          <div class="bg-yellow/50 rounded-xl p-4 bg-[#FFFBE3]">
+            <div class="flex space-x-6">
+              <img
+                src="./photo/bow.png"
+                class="object-cover w-[240px] h-full rounded-lg"
+                alt="Bow"
+              />
+              <div>
+                <h1 class="text-[24px]">นางสาววณิชญา เรืองรักเรียน</h1>
+                <div>
+                  <p>ชื่อ วณิชญา เรืองรักเรียน ชื่อเล่น โบว์</p>
+                  <p>
+                    อายุ 19 ปี จะ 20 อีก 2 วันนับจากวันที่ 2 กุมภา แต่จิตใจยัง
+                    15
+                  </p>
+                  <p>
+                    อาหารที่ชอบ ชาบู ไม่ชอบกินทุเรียน
+                    ไม่ใช่เพราะเหม็นแต่เนื้อมันกินเยอะละเลี้ยนㅤㅤ
+                  </p>
+                </div>
+                <div class="social-icon">
+                  <a
+                    href="https://www.facebook.com/bowkk.vanichaya"
+                    target="_blank"
+                  >
+                    <i class="fa-brands fa-facebook"></i>
+                  </a>
+                  <a href="https://www.instagram.com/vanit.rx/" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa-brands fa-line"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Peem -->
+          <div class="bg-red/50 rounded-xl p-4 bg-[#FFFBE3]">
+            <div class="flex space-x-6">
+              <img
+                src="./photo/peem.png"
+                class="object-cover w-[240px] h-full rounded-lg"
+                alt="Peem"
+              />
+              <div>
+                <h1 class="text-[24px]">นายอิทธิกร แป้นบางนา</h1>
+                <div>
+                  <p>
+                    สวัสดีครับ ผมชื่ออิทธิกร แป้นบางนา ชื่อเล่น ภีม อายุ 20 ปี
+                    ตอนนี้กำลังศึกษาอยู่ที่คณะวิศวกรรมศาสตร์
+                    ในอนาคตผมอยากเป็นวิศวกรที่สามารถสร้างสรรค์นวัตกรรมใหม่ๆ
+                    เพื่อช่วยพัฒนาสังคมและประเทศชาติ ยินดีที่ได้รู้จักทุกคนครับ!
+                  </p>
+                </div>
+                <div class="social-icon">
+                  <a href="https://www.facebook.com/daeo.gawa" target="_blank">
+                    <i class="fa-brands fa-facebook"></i>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/peem_misus"
+                    target="_blank"
+                  >
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                  <a href="https://line.me/ti/p/I490wXYDdu" target="_blank">
+                    <i class="fa-brands fa-line"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Ford -->
+          <div class="bg-green/30 rounded-xl p-4 bg-[#FFFBE3]">
+            <div class="flex space-x-6">
+              <img
+                src="./photo/ford.jpg"
+                class="object-cover w-[240px] h-full rounded-lg"
+                alt="Ford"
+              />
+              <div>
+                <h1 class="text-[24px]">นายเตชะไพบูลย์ สร้อยสระคู</h1>
+                <div>
+                  <p>
+                    สวัสดีครับผมชื่อ ฟอร์ด ปีนี้อายุ 20 ปี ตอนนี้อยาก
+                    ไปทำงานทางด้าน ฮาร์ดเเวร์ ขอบคุณครับ
+                  </p>
+                </div>
+                <div class="social-icon">
+                  <a
+                    href="https://www.facebook.com/maime.kub.58"
+                    target="_blank"
+                  >
+                    <i class="fa-brands fa-facebook"></i>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/shaft_fxrd/"
+                    target="_blank"
+                  >
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                  <a href="https://line.me/ti/p/uEMuYBS-D5" target="_blank">
+                    <i class="fa-brands fa-line"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Pat -->
+          <div class="bg-black/40 rounded-xl p-4 bg-[#FFFBE3]">
+            <div class="flex space-x-6">
+              <img
+                src="./photo/pat.jpg"
+                class="object-cover w-[240px] h-full rounded-lg"
+                alt="Pat"
+              />
+              <div>
+                <h1 class="text-[24px]">นายภัทรดนัย จำรัส</h1>
+                <div>
+                  <p>
+                    ข้าพเจ้านายภัทรดนัย จำรัส หรือจะเรียกสั้น ๆ ว่า ภัทร
+                    เกิดในปีพุทธศักราช 2547 ในเดือนพฤศจิกายน
+                    ในเวลาว่างนั้นข้าพเจ้าชอบทำอาหาร
+                    เล่นเกมส์และออกกำลังกายในยามที่เบื่อหน่าย อีกทั้ง ณ
+                    ตอนนี้ข้าพเจ้าได้เข้ารับการศึกษาในคณะวิศวกรรมศาสตร์
+                    มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าลาดกระบัง
+                    และเป็นนักศึกษาชั้นปีที่ 2
+                    ในสาขาวิศวกรรมคอมพิวเตอร์ไอโอทีและสารสนเทศ
+                    หากมีคำถามหรือสนใจติดต่อได้ที่เบอร์โทรศัพท์ 098-765-4321
+                    ขอบคุณครับ
+                  </p>
+                </div>
+                <div class="social-icon">
+                  <a
+                    href="https://www.facebook.com/patrdanai.chumrus"
+                    target="_blank"
+                  >
+                    <i class="fa-brands fa-facebook"></i>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/_patrdanai/"
+                    target="_blank"
+                  >
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa-brands fa-line"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project -->
+    <div
+      class="min-h-screen bg-project_world bg-cover bg-center bg-no-repeater flex text-black"
+    >
+      <div class="text-center content-center justify-items-center w-full">
+        <div class="container justify-items-center space-y-15 py-50">
+          <h1
+            id="project"
+            class="font-game text-[48px] text-outline-3 text-white"
+          >
+            Project
+          </h1>
+          <div
+            class="p-4 rounded-xl border border-darkgreen border-4 w-full h-full bg-[#FFFBE3]"
+          >
+            <div class="flex justify-center">
+              <div class="w-[80%]">
+                <div
+                  class="text-[32px] font-game text-outline-darkgreen text-white"
+                >
+                  CEFR Monster
+                </div>
+                <div class="grid gap-3 text-left">
+                  <div>
+                    <h1 class="text-[24px] font-semibold">Introduction</h1>
+                    <p class="ml-12">
+                      Embark on an exciting adventure where learning English
+                      becomes a thrilling challenge! In this mobile game,
+                      players progress through adventurous levels, answering
+                      English word questions by selecting the correct Thai
+                      translation. As the levels increase, so does the
+                      complexity of the words, making it a fun and engaging way
+                      to improve vocabulary. Challenge yourself, explore new
+                      words, and master English in an immersive gaming
+                      experience!
+                    </p>
+                  </div>
+                  <div>
+                    <h1 class="text-[24px] font-semibold">Unique Functions</h1>
+                    <div class="ml-12">
+                      <div class="font-semibold flex items-center">
+                        Themed Levels
+                        <i
+                          class="fa fa-arrow-right mx-2"
+                          aria-hidden="true"
+                        ></i>
+                        <p class="font-normal">
+                          Different environments or stories for each adventure
+                          stage.
+                        </p>
+                      </div>
+                      <div class="font-semibold flex items-center">
+                        Unlockable Content
+                        <i
+                          class="fa fa-arrow-right mx-2"
+                          aria-hidden="true"
+                        ></i>
+                        <p class="font-normal">
+                          New levels, themes, or power-ups unlocked based on
+                          progress.
+                        </p>
+                      </div>
+                      <div class="font-semibold flex items-center">
+                        Word Quiz System
+                        <i
+                          class="fa fa-arrow-right mx-2"
+                          aria-hidden="true"
+                        ></i>
+                        <p class="font-normal">
+                          English words will be more harder when you level up.
+                        </p>
+                      </div>
+                      <div class="font-semibold flex items-center">
+                        Audio Feedback
+                        <i
+                          class="fa fa-arrow-right mx-2"
+                          aria-hidden="true"
+                        ></i>
+                        <p class="font-normal">
+                          Sound effects for correct/incorrect answers. Besides,
+                          Music is Unique.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <h1 class="text-[24px] font-semibold">Dev/Tools</h1>
+                    <div class="ml-12">
+                      <div class="font-semibold flex items-center">
+                        Languages
+                        <i
+                          class="fa fa-arrow-right mx-2"
+                          aria-hidden="true"
+                        ></i>
+                        <p class="font-normal">HTML, CSS, Javascript</p>
+                      </div>
+                      <div class="font-semibold flex items-center">
+                        Frameworks/Libraries
+                        <i
+                          class="fa fa-arrow-right mx-2"
+                          aria-hidden="true"
+                        ></i>
+                        <p class="font-normal">
+                          React, Tailwind CSS, Lucide-react, React-Router-Dom,
+                          js-cookie
+                        </p>
+                      </div>
+                      <div class="font-semibold flex items-center">
+                        Build Tool
+                        <i
+                          class="fa fa-arrow-right mx-2"
+                          aria-hidden="true"
+                        ></i>
+                        <p class="font-normal">Vite</p>
+                      </div>
+                      <div class="font-semibold flex items-center">
+                        Backend-as-a-Service (BaaS)
+                        <i
+                          class="fa fa-arrow-right mx-2"
+                          aria-hidden="true"
+                        ></i>
+                        <p class="font-normal">Firebase</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-center">
+                    <h1 class="text-[24px] font-semibold">
+                      Figma <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </h1>
+                    <p class="ml-4">
+                      <a
+                        href="https://www.figma.com/design/s2xvXQAH9ELRKhOnV6Cjf3/CEFR_Monster?node-id=0-1&p=f&t=t7R2ZT1qtD4og2SZ-0"
+                        class="text-blue-500 text-[18px]"
+                        >CEFR Monster Figma</a
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="border border-black/30 my-8 mx-4"></div>
+            <div
+              class="text-[32px] font-game text-outline-darkgreen text-white mb-4"
+            >
+              Tutorial - Pages
+            </div>
+            <div class="grid grid-cols-4 gap-4 justify-items-center font-game">
+              <div>
+                <img alt="home" src="./photo/game/home.jpg" class="h-[32vw]" />
+                <p class="mt-3 sm:text-[16px] text-[14px]">Home</p>
+              </div>
+              <div>
+                <img alt="mode" src="./photo/game/mode.jpg" class="h-[32vw]" />
+                <p class="mt-3 sm:text-[16px] text-[14px]">Mode</p>
+              </div>
+              <div>
+                <img
+                  alt="level"
+                  src="./photo/game/level.jpg"
+                  class="h-[32vw]"
+                />
+                <p class="mt-3 sm:text-[16px] text-[14px]">Select level</p>
+              </div>
+              <div>
+                <img
+                  alt="gameplay"
+                  src="./photo/game/gametime.jpg"
+                  class="h-[32vw]"
+                />
+                <p class="mt-3 sm:text-[16px] text-[14px]">Gameplay</p>
+              </div>
+            </div>
+            <div class="border border-black/30 my-8 mx-4"></div>
+            <div
+              class="text-[32px] font-game text-outline-darkgreen text-white mb-4"
+            >
+              Mode Gameplay
+            </div>
+            <div class="flex gap-4 font-game justify-center">
+              <div class="flex flex-col items-center">
+                <img
+                  alt="home"
+                  src="./photo/game/heart-gameplay.png"
+                  class="h-[32vw]"
+                />
+                <p class="mt-3 sm:text-[16px] text-[14px]">Heart Mode</p>
+              </div>
+              <div class="flex flex-col items-center">
+                <img
+                  alt="mode"
+                  src="./photo/game/time-gameplay.png"
+                  class="h-[32vw]"
+                />
+                <p class="mt-3 sm:text-[16px] text-[14px]">Timer Mode</p>
+              </div>
+            </div>
+            <div class="border border-black/30 my-8 mx-4"></div>
+            <div
+              class="text-[32px] font-game text-outline-darkgreen text-white mb-4"
+            >
+              Map
+            </div>
+            <div class="grid grid-cols-5 gap-4 justify-items-center font-game">
+              <div>
+                <img
+                  alt="home"
+                  src="./photo/map/bg-lvl1.png"
+                  class="h-[32vw]"
+                />
+                <p class="mt-3 sm:text-[16px] text-[14px]">LEVEL 1</p>
+              </div>
+              <div>
+                <img
+                  alt="home"
+                  src="./photo/map/bg-lvl2.png"
+                  class="h-[32vw]"
+                />
+                <p class="mt-3 sm:text-[16px] text-[14px]">LEVEL 2</p>
+              </div>
+              <div>
+                <img
+                  alt="home"
+                  src="./photo/map/bg-lvl3.png"
+                  class="h-[32vw]"
+                />
+                <p class="mt-3 sm:text-[16px] text-[14px]">LEVEL 3</p>
+              </div>
+              <div>
+                <img
+                  alt="home"
+                  src="./photo/map/bg-lvl4.png"
+                  class="h-[32vw]"
+                />
+                <p class="mt-3 sm:text-[16px] text-[14px]">LEVEL 4</p>
+              </div>
+              <div>
+                <img
+                  alt="home"
+                  src="./photo/map/bg-lvl5.png"
+                  class="h-[32vw]"
+                />
+                <p class="mt-3 sm:text-[16px] text-[14px]">LEVEL 5</p>
+              </div>
+              <div>
+                <img
+                  alt="home"
+                  src="./photo/map/bg-lvl6.png"
+                  class="h-[32vw]"
+                />
+                <p class="mt-3 sm:text-[16px] text-[14px]">LEVEL 6</p>
+              </div>
+              <div>
+                <img
+                  alt="home"
+                  src="./photo/map/bg-lvl7.png"
+                  class="h-[32vw]"
+                />
+                <p class="mt-3 sm:text-[16px] text-[14px]">LEVEL 7</p>
+              </div>
+              <div>
+                <img
+                  alt="home"
+                  src="./photo/map/bg-lvl8.png"
+                  class="h-[32vw]"
+                />
+                <p class="mt-3 sm:text-[16px] text-[14px]">LEVEL 8</p>
+              </div>
+              <div>
+                <img
+                  alt="home"
+                  src="./photo/map/bg-lvl9.png"
+                  class="h-[32vw]"
+                />
+                <p class="mt-3 sm:text-[16px] text-[14px]">LEVEL 9</p>
+              </div>
+              <div>
+                <img
+                  alt="home"
+                  src="./photo/map/bg-lvl10.png"
+                  class="h-[32vw]"
+                />
+                <p class="mt-3 sm:text-[16px] text-[14px]">LEVEL 10</p>
+              </div>
+            </div>
+            <div class="border border-black/30 my-8 mx-4"></div>
+            <div
+              class="flex justify-center items-center mb-4 rounded-full py-2 bg-yellow/70 hover:bg-orange/80 transition shadow-lg shadow-yellow/70 hover:shadow-orange/70"
+            >
+              <a href="" class="w-full font-bold text-[18px]">Play</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        var isOpen = true;
+        $("#open-burgur").on("click", function () {
+          if (!isOpen) $("#navbar-hamburger").slideUp();
+          else $("#navbar-hamburger").slideDown();
+
+          isOpen = !isOpen;
+        });
+      });
+    </script>
+  </body>
+</html>
