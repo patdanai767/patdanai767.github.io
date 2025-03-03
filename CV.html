@@ -31,8 +31,22 @@
           background-attachment: fixed;
         }
 
+        .bg-natural {
+          background-image: url("/photo/background/orig.png");
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
+        }
+
         .bg-project_world {
           background-image: url("https://images.unsplash.com/photo-1496150458551-140441714f2f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
+        }
+
+        .bg-skygrass {
+          background-image: url("/photo/background/footer.png");
           background-size: cover;
           background-position: center;
           background-attachment: fixed;
@@ -83,10 +97,9 @@
     </style>
   </head>
   <body class="bg-[#FFFBE3]">
-    
     <!-- Navbar -->
     <nav
-      class="bg-black md:bg-black text-gray-300 py-4 fixed w-full top-0 justify-items-center"
+      class="bg-slate-800/50 text-gray-300 py-4 fixed w-full top-0 justify-items-center"
     >
       <div class="container">
         <div class="flex justify-between items-center w-full">
@@ -165,7 +178,7 @@
 
     <!-- Home -->
     <div
-      class="min-h-screen bg-pixel_world bg-cover bg-center bg-no-repeater flex text-white"
+      class="min-h-screen bg-natural bg-center bg-cover bg-center bg-no-repeater flex text-white bg-opacity-5"
       id="home"
     >
       <div
@@ -178,7 +191,7 @@
             <p>WELCOME</p>
             <p>TO GROUP-2</p>
           </div>
-          <div class="mt-2 text-gray-300/70 w-full">
+          <div class="mt-2 w-full">
             Please, be kind because we're innocent for this cruel world.
           </div>
           <div class="flex justify-center md:justify-start">
@@ -203,7 +216,7 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
           <!-- Get -->
-          <div class="bg-orange/40 rounded-xl p-4 bg-[#FFFBE3]">
+          <div class="rounded-xl p-4 bg-[#1abc9c]/40">
             <div class="flex space-x-6">
               <img
                 src="./photo/get.jpg"
@@ -241,7 +254,7 @@
             </div>
           </div>
           <!-- Phu -->
-          <div class="bg-darkgreen/40 rounded-xl p-4 bg-[#FFFBE3]">
+          <div class="rounded-xl p-4 bg-[#16a085]/70">
             <div class="flex space-x-6">
               <img
                 src="./photo/phu.png"
@@ -282,7 +295,7 @@
             </div>
           </div>
           <!-- Bow -->
-          <div class="bg-yellow/50 rounded-xl p-4 bg-[#FFFBE3]">
+          <div class="rounded-xl p-4 bg-[#2ecc71]/40">
             <div class="flex space-x-6">
               <img
                 src="./photo/bow.png"
@@ -320,7 +333,7 @@
             </div>
           </div>
           <!-- Peem -->
-          <div class="bg-red/50 rounded-xl p-4 bg-[#FFFBE3]">
+          <div class="rounded-xl p-4 bg-[#27ae60]/70">
             <div class="flex space-x-6">
               <img
                 src="./photo/peem.png"
@@ -355,7 +368,7 @@
             </div>
           </div>
           <!-- Ford -->
-          <div class="bg-green/30 rounded-xl p-4 bg-[#FFFBE3]">
+          <div class="rounded-xl p-4 bg-[#3498db]/40">
             <div class="flex space-x-6">
               <img
                 src="./photo/ford.jpg"
@@ -391,7 +404,7 @@
             </div>
           </div>
           <!-- Pat -->
-          <div class="bg-black/40 rounded-xl p-4 bg-[#FFFBE3]">
+          <div class="rounded-xl p-4 bg-[#2980b9]/70">
             <div class="flex space-x-6">
               <img
                 src="./photo/pat.jpg"
@@ -440,7 +453,7 @@
 
     <!-- Project -->
     <div
-      class="min-h-screen bg-project_world bg-cover bg-center bg-no-repeater flex text-black"
+      class="min-h-screen bg-skygrass bg-cover bg-center bg-no-repeater flex text-black"
     >
       <div class="text-center content-center justify-items-center w-full">
         <div class="container justify-items-center space-y-15 py-50">
@@ -519,6 +532,16 @@
                         <p class="font-normal">
                           Sound effects for correct/incorrect answers. Besides,
                           Music is Unique.
+                        </p>
+                      </div>
+                      <div class="font-semibold flex items-center">
+                        Flashcard
+                        <i
+                          class="fa fa-arrow-right mx-2"
+                          aria-hidden="true"
+                        ></i>
+                        <p class="font-normal">
+                          Flashcards for each word to help with memorization.
                         </p>
                       </div>
                     </div>
@@ -638,6 +661,54 @@
             <div
               class="text-[32px] font-game text-outline-darkgreen text-white mb-4"
             >
+              5 CEFR levels
+            </div>
+            <div class="grid grid-cols-5 gap-4 justify-items-center font-game">
+              <div>
+                <img
+                  alt="home"
+                  src="./photo/level/heart-level1-2.png"
+                  class="h-[32vw]"
+                />
+                <p class="mt-3 sm:text-[16px] text-[14px]">LEVEL 1-2 (A1)</p>
+              </div>
+              <div>
+                <img
+                  alt="home"
+                  src="./photo/level/heart-level3-4.png"
+                  class="h-[32vw]"
+                />
+                <p class="mt-3 sm:text-[16px] text-[14px]">LEVEL 3-4 (A2)</p>
+              </div>
+              <div>
+                <img
+                  alt="home"
+                  src="./photo/level/heart-level5-6.png"
+                  class="h-[32vw]"
+                />
+                <p class="mt-3 sm:text-[16px] text-[14px]">LEVEL 5-6 (B1)</p>
+              </div>
+              <div>
+                <img
+                  alt="home"
+                  src="./photo/level/heart-level7-9.png"
+                  class="h-[32vw]"
+                />
+                <p class="mt-3 sm:text-[16px] text-[14px]">LEVEL 7-9 (B2)</p>
+              </div>
+              <div>
+                <img
+                  alt="home"
+                  src="./photo/level/heart-level10.png"
+                  class="h-[32vw]"
+                />
+                <p class="mt-3 sm:text-[16px] text-[14px]">LEVEL 10 (C1)</p>
+              </div>
+            </div>
+            <div class="border border-black/30 my-8 mx-4"></div>
+            <div
+              class="text-[32px] font-game text-outline-darkgreen text-white mb-4"
+            >
               Map
             </div>
             <div class="grid grid-cols-5 gap-4 justify-items-center font-game">
@@ -724,9 +795,69 @@
             </div>
             <div class="border border-black/30 my-8 mx-4"></div>
             <div
+              class="text-[32px] font-game text-outline-darkgreen text-white mb-4"
+            >
+              The other functions
+            </div>
+            <div class="grid grid-cols-3 md:mx-64 gap-4 justify-items-center font-game">
+              <div>
+                <img
+                  alt="home"
+                  src="./photo/function/member.png"
+                  class="h-[32vw]"
+                />
+                <p class="mt-3 sm:text-[16px] text-[14px]">Member</p>
+              </div>
+              <div>
+                <img
+                  alt="home"
+                  src="./photo/function/flashcard.png"
+                  class="h-[32vw]"
+                />
+                <p class="mt-3 sm:text-[16px] text-[14px]">Flashcard</p>
+              </div>
+              <div>
+                <img
+                  alt="home"
+                  src="./photo/function/flashcard-focus.png"
+                  class="h-[32vw]"
+                />
+                <p class="mt-3 sm:text-[16px] text-[14px]">Explain</p>
+              </div>
+              <div>
+                <img
+                  alt="home"
+                  src="./photo/function/win.png"
+                  class="h-[32vw]"
+                />
+                <p class="mt-3 sm:text-[16px] text-[14px]">Win menu</p>
+              </div>
+              <div>
+                <img
+                  alt="home"
+                  src="./photo/function/lose.png"
+                  class="h-[32vw]"
+                />
+                <p class="mt-3 sm:text-[16px] text-[14px]">Lose menu</p>
+              </div>
+              <div>
+                <img
+                  alt="home"
+                  src="./photo/function/pause.png"
+                  class="h-[32vw]"
+                />
+                <p class="mt-3 sm:text-[16px] text-[14px]">Pause menu</p>
+              </div>
+            </div>
+            <div class="border border-black/30 my-8 mx-4"></div>
+            <div
               class="flex justify-center items-center mb-4 rounded-full py-2 bg-yellow/70 hover:bg-orange/80 transition shadow-lg shadow-yellow/70 hover:shadow-orange/70"
             >
-              <a href="" class="w-full font-bold text-[18px]">Play</a>
+              <a
+                href="https://cefr-game.web.app/"
+                class="w-full font-bold text-[18px]"
+                >Play</a
+              >
             </div>
           </div>
         </div>
